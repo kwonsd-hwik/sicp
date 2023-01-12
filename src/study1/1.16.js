@@ -18,4 +18,4 @@ function is_event(n){
     return n%2 == 0;
 }
 
-console.log(fast_expt(2,10))
+console.log(fast_expt(2,10) == 1024)
