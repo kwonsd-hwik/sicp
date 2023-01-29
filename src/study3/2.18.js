@@ -1,4 +1,4 @@
-import { head, tail, list, pair, is_null, append } from 'sicp';
+import { head, tail, list, pair } from 'sicp';
 
 
 function reverse(paramList) {
