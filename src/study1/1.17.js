@@ -23,5 +23,9 @@ function halve(n){
 }
 
 console.log(times(2,10) == 20);
+console.log(times(2,11) == 22);
+console.log(times(3,11) == 33);
 console.log(times(2,20) == 40);
+console.log(times(2,220) == 440);
 
+console.assert(times(2,220) == 2440, "dd", "dd");
