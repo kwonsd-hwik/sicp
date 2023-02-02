@@ -15,11 +15,9 @@ function brooks_curried(lists) {
     return brooks(head(lists), tail(lists));
 }
 
-console.log(brooks_curried(list(brooks_curried,
-    list(plus_curried, 3, 4))))
-// => 7
+console.assert(brooks_curried(list(brooks_curried,
+    list(plus_curried, 3, 4))) == 7);
 
-console.log(brooks_curried(list(brooks_curried,
+console.assert(brooks_curried(list(brooks_curried,
     list(brooks_curried,
-        list(plus_curried, 3, 4)))));
-// => 7
+        list(plus_curried, 3, 4)))) == 7);
