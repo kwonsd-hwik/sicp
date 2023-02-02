@@ -4,7 +4,7 @@ function make_mobile(left, right) {
     return list(left, right);
 }
 
-var m = make_mobile(1,2);
+const m = make_mobile(1,2);
 
 function left_branch(m) {
     return head(m);
@@ -25,7 +25,7 @@ function make_branch(length, structure) {
     return list(length, structure);
 }
 
-var b = make_branch(2, 10)
+const b = make_branch(2, 10)
 
 function branch_length(item) {
     return head(item);
@@ -42,10 +42,10 @@ function branch_struct(item) {
 console.assert(branch_struct(b) == 10);
 
 
-var leftBranch = make_branch(1, 10)
-var rightBranch = make_branch(2, 24)
+const leftBranch = make_branch(1, 10)
+const rightBranch = make_branch(2, 24)
 
-var mobile = make_mobile(leftBranch, rightBranch)
+const mobile = make_mobile(leftBranch, rightBranch)
 
 function total_weight(m) {
     return is_null(m) ? 0 : is_pair(m) ? total_weight(branch_struct(left_branch(m))) + total_weight(branch_struct(right_branch(m))) : m;

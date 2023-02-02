@@ -1,7 +1,7 @@
 import {head, tail, list, raw_display, display} from 'sicp';
 
 
-var l = list(1, 3, list(5, 7), 9)
+let l = list(1, 3, list(5, 7), 9);
 console.assert(head(tail(head(tail(tail(l))))) == 7)
 
 l = list(list(7))
