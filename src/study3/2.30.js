@@ -1,4 +1,4 @@
-import {head, tail, list, raw_display, display, pair, append, is_pair, is_null, stringify} from 'sicp';
+import {head, tail, list, raw_display, display, pair, map, is_pair, is_null, stringify} from 'sicp';
 
 function scale_tree(tree, factor) {
     return is_null(tree)
@@ -19,11 +19,19 @@ function square_tree(tree) {
             ? pair(square_tree(head(tree)),
                 square_tree(tail(tree)))
             : tree * tree;
-
 }
 
-const result = square_tree(list(1,
+const l = list(1,
     list(2, list(3, 4), 5),
-    list(6, 7)));
+    list(6, 7))
 
-console.assert(stringify(result) == stringify(list(1, list(4, list(9, 16), 25), list(36, 49))))
+console.assert(stringify(square_tree(l)) == stringify(list(1, list(4, list(9, 16), 25), list(36, 49))))
+
+
+function square_tree_map(tree) {
+    display(tree)
+    return map(x => is_pair(x)? square_tree_map(x) : x*x, tree);
+}
+
+
+console.assert(stringify(square_tree_map(l)) == stringify(list(1, list(4, list(9, 16), 25), list(36, 49))))
